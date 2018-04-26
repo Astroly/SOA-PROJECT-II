@@ -1,4 +1,8 @@
 <?php
+require 'Config/db.php';
+require 'Slim/Slim.php';
+\Slim\Slim::registerAutoloader();
+$app = new \Slim\Slim();
 use\Psr\Http\Message\ServerRequestInterface as Request ;
 use\Psr\Http\Message\ResponseInterface as Response ;
 
