@@ -5,15 +5,15 @@ use\Psr\Http\Message\ResponseInterface as Response ;
 require '../vender/autoload.php' ;
 
 $app = new \Slim\App ;
-$app->get('/hello/{name}',function (Request $request, Response $response) {
-    $name = $request->getAttribute('name') ;
-    $response->getBody()->write("Hello, $name") ;
+$app->get('/productID'/{productID'}',function (Request $request, Response $response) {
+    $productID = $request->getAttribute('productID') ;
+    $response->getBody()->write("Hello, $productID'") ;
 
     return $response ;
 });
 
 // Customer Route
-require '../src/router/customer.php' ;
+require '../src/router/Product.php' ;
 require '../src/router/db.php' ;
 
 
