@@ -14,7 +14,7 @@ $app->get('/productID'/{productID'}',function (Request $request, Response $respo
 
 // Customer Route
 require '../src/router/Product.php' ;
-require '../src/router/db.php' ;
+require '../src/Config/db.php' ;
 
 
 

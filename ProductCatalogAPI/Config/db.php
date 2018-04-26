@@ -4,7 +4,7 @@
      private $dbhost = 'localhost';
      private $dbuser = 'root';
      private $dbpass = '';
-     private $dbname = 'product_db';
+     private $dbname = 'productservice';
 
      //Connect
      public function connect(){
