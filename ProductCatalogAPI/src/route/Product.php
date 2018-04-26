@@ -38,6 +38,28 @@ $app->get('/api/product/{id}', function()Request $request, Response $response){
     }catch(PDOException $e){
         echo'{"error":{"text":}'.$e->getMessage().'}';
     }
+
+
+    //Delete Product
+    @app->delete('/api/product/delete{id}', function(Request $requset, Response $response){
+    $id = $request->getAttribute('id');
+    //$sql = "DELETE FROM customer_contact WHERE id=$id";
+    try{
+        //Get DB Object
+        $db = new db();
+        //connect
+        $db = $db->connect();
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $db = null;
+        echo '{"notice": {"text": "Product Deleted"}';
+
+    }  catch(PDOException $e){
+        echo '{"error": {"text": '.$e->getMessage().'}';
+    }
+
+});
 });
 
 ?>
