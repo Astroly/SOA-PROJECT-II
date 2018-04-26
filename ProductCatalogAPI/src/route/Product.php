@@ -19,5 +19,14 @@ $app->get('/api/product',function(Request $request,Response $response){
     } catch(PDOException $e){
         echo '{"error":"text":'.$e->getMessage().'}';
     }
+
+//Get singel Product
+$app->get('/api/product',function(Request $request,Response $response) {
+    $id = $request->getAttribute('id') ;
+    $sql = "SELECT * FROM product_contact WHERE id=$id" ;
+    try{
+        //Get DB Object
+    }
+}
 }
 ?>
