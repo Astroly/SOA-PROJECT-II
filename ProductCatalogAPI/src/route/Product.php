@@ -39,29 +39,6 @@ $app->get('/api/product/{id}', function()Request $request, Response $response){
         echo'{"error":{"text":}'.$e->getMessage().'}';
     }
 
-<<<<<<< HEAD
-
-    //Delete Product
-    @app->delete('/api/product/delete{id}', function(Request $requset, Response $response){
-    $id = $request->getAttribute('id');
-    //$sql = "DELETE FROM customer_contact WHERE id=$id";
-    try{
-        //Get DB Object
-        $db = new db();
-        //connect
-        $db = $db->connect();
-
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-        $db = null;
-        echo '{"notice": {"text": "Product Deleted"}';
-
-    }  catch(PDOException $e){
-        echo '{"error": {"text": '.$e->getMessage().'}';
-    }
-
-});
-=======
 //Add Products
 $app->post('/api/product/add',function(Request $request, Response $response) {
     $name = $request->getParam('name') ;
@@ -124,8 +101,27 @@ $app->put('/api/product/update/{id}',function(Request $request, Response $respon
     } catch(PODExution $e) {
         echo '{"error": {"text": '.$e->getMessage().'}' ;
     }
+    //Delete Product
+@app->delete('/api/product/delete{id}', function(Request $requset, Response $response){
+    $id = $request->getAttribute('id');
+    //$sql = "DELETE FROM customer_contact WHERE id=$id";
+    try{
+        //Get DB Object
+        $db = new db();
+        //connect
+        $db = $db->connect();
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $db = null;
+        echo '{"notice": {"text": "Product Deleted"}';
+
+    }  catch(PDOException $e){
+        echo '{"error": {"text": '.$e->getMessage().'}';
+    }
+
+});
 }
->>>>>>> aris
 });
 
 ?>
