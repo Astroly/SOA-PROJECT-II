@@ -101,6 +101,7 @@ $app->put('/api/product/update/{id}',function(Request $request, Response $respon
     } catch(PODExution $e) {
         echo '{"error": {"text": '.$e->getMessage().'}' ;
     }
+    
     //Delete Product
     $app->delete('/api/product/delete{id}', function(Request $requset, Response $response){
     $id = $request->getAttribute('id');
