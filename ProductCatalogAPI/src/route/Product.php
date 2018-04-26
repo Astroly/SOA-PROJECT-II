@@ -20,15 +20,8 @@ $app->get('/api/product',function(Request $request,Response $response){
         echo '{"error":"text":'.$e->getMessage().'}';
     }
 
-//Get singel Product
-$app->get('/api/product',function(Request $request,Response $response) {
-    $id = $request->getAttribute('id') ;
-    $sql = "SELECT * FROM product_contact WHERE id=$id" ;
-    try{
-        //Get DB Object
-    }
-}
-}
+
+
 //GET Single Product
 $app->get('/api/product/{id}', function()Request $request, Response $response){
     $id = $request ->getAttribute('id');
@@ -46,5 +39,5 @@ $app->get('/api/product/{id}', function()Request $request, Response $response){
         echo'{"error":{"text":}'.$e->getMessage().'}';
     }
 });
-000
+
 ?>
