@@ -20,4 +20,22 @@ $app->get('/api/product',function(Request $request,Response $response){
         echo '{"error":"text":'.$e->getMessage().'}';
     }
 }
+//GET Single Product
+$app->get('/api/product/{id}', function()Request $request, Response $response){
+    $id = $request ->getAttribute('id');
+    $sql = "SELECT * FROM /product WHERE id = $id";
+    try {
+        $db = new db();
+        $db = $db->connect();
+
+         $stmt =$db->query($sql);
+
+        $/product = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        echo json_encode($customer);
+    }catch(PDOException $e){
+        echo'{"error":{"text":}'.$e->getMessage().'}';
+    }
+});
+
 ?>
